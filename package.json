@@ -1,0 +1,19 @@
+{
+  "name": "egghead-d3v4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "browser-sync start -s -f index.html src --no-ui --no-notify"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bclinkinbeard/egghead-d3v4.git"
+  },
+  "dependencies": {
+    "d3": "4.1.1"
+  },
+  "devDependencies": {
+    "browser-sync": "2.13.0"
+  }
+}
