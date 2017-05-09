@@ -32,6 +32,11 @@ var x = d3.scaleLinear()
 var xAxis = d3.axisBottom(x)
     .ticks(5, '%');
 
+// append x axis
+g.append('g')
+    .attr('transform', 'translate(0, ' + height + ')')
+    .call(xAxis);
+
 // create y axis
 var y = d3.scaleBand()
     .range([height, 0])
@@ -46,20 +51,16 @@ var z = d3.scaleOrdinal()
 var stack = d3.stack()
     .offset(d3.stackOffsetExpand);
 
-    // append x axis
-    g.append('g')
-        .attr('transform', 'translate(0, ' + height + ')')
-        .call(xAxis);
-    // append y axis
-    g.append('g')
-        .call(yAxis);
-
 var render = function (dataset) {
 
     // set y domain
     y.domain(dataset.map(function (d) {
         return d.name;
     }));
+
+    // append y axis
+    g.append('g')
+        .call(yAxis);
 
     // map stack bar colours
     var colorMapping = Object.keys(dataset[0]).slice(1);
