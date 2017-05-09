@@ -40,6 +40,7 @@ g.append('g')
     .call(xAxis);
 
 var z = d3.scaleOrdinal()
+    // .range(["#f00", "#0f0", "#00f"])
     .range(["#356f75", "#409ac2", "#b4c68f"])
     .domain(colorMapping);
 
@@ -58,9 +59,10 @@ bars.selectAll("rect")
     .data(function(d) {
         return d;
     })
-    .enter().append("rect")
-    .attr("y", function(d) {
-        return y(d.data.State);
+    .enter()
+    .append("rect")
+    .attr("y", function(d, i) {
+        return y(d.data.name);
     })
     .attr("x", function(d) {
         return x(d[1]);
