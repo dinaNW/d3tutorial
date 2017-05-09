@@ -9,7 +9,7 @@ var colorMapping = Object.keys(dataset[0]).slice(1);
 
 var margin = {top: 20, right: 40, bottom: 40, left: 85};
 
-var svg = d3.select('svg').attr('width', 350).attr('height', 400);
+var svg = d3.select('svg').attr('width', 560).attr('height', 340);
 
 var width = +svg.attr('width') - margin.left - margin.right;
 
@@ -18,26 +18,28 @@ var height = +svg.attr('height') - margin.top - margin.bottom;
 var g = svg.append('g')
     .attr('transform', 'translate(' + margin.left + ', ' + margin.top + ')');
 
+var x = d3.scaleLinear()
+    .domain([0, 1])
+    .range([0, width]);
+
+var xAxis = d3.axisBottom(x)
+    .ticks(5, '%');
+
+g.append('g')
+    .attr('transform', 'translate(0, ' + height + ')')
+    .call(xAxis);
+
 var y = d3.scaleBand()
     .domain(dataset.map(function (d) {
         return d.name;
     }))
-    .range([height, 0]);
+    .range([height, 0])
+    .padding(0.5);
 
 var yAxis = d3.axisLeft(y);
 
 g.append('g')
     .call(yAxis);
-
-var x = d3.scaleLinear()
-    .domain([0, 1])
-    .range([0, width]);
-
-var xAxis = d3.axisBottom(x).ticks(5, '%');
-
-g.append('g')
-    .attr('transform', 'translate(0, ' + height + ')')
-    .call(xAxis);
 
 var z = d3.scaleOrdinal()
     .range(["#356f75", "#409ac2", "#b4c68f"])
@@ -64,10 +66,9 @@ bars.selectAll("rect")
         return y(d.data.name);
     })
     .attr("x", function(d) {
-        console.log(d);
         return x(d[0]);
     })
     .attr("width", function(d) {
-        return x(d[1]);
+        return x(d[1] - d[0]);
     })
     .attr("height", y.bandwidth());
