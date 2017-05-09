@@ -46,26 +46,32 @@ var z = d3.scaleOrdinal()
 var stack = d3.stack()
     .offset(d3.stackOffsetExpand);
 
-var render = function (dataset) {
     // append x axis
     g.append('g')
         .attr('transform', 'translate(0, ' + height + ')')
         .call(xAxis);
+    // append y axis
+    g.append('g')
+        .call(yAxis);
 
-    // set y domain and append y axis
+var render = function (dataset) {
+
+    // set y domain
     y.domain(dataset.map(function (d) {
         return d.name;
     }));
-    g.append('g')
-        .call(yAxis);
 
     // map stack bar colours
     var colorMapping = Object.keys(dataset[0]).slice(1);
     z.domain(colorMapping);
 
+    // create stack series
+    stack.keys(colorMapping); // returns a stack generator function which can take a data array as arg
+    var stackSeries = stack(dataset);
+
     //render bars
     var bars = g.selectAll(".bar")
-        .data(stack.keys(colorMapping)(dataset))
+        .data(stackSeries)
         .enter()
         .append("g")
         .attr("class", "bar")
