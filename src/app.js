@@ -52,7 +52,7 @@ var z = d3.scaleOrdinal()
 var stack = d3.stack()
     .offset(d3.stackOffsetExpand);
 
-function render(dataset) {
+function drawChart(dataset, elWrapper) {
     // set y domain
     y.domain(dataset.map(function (d) {
         return d.name;
@@ -67,7 +67,7 @@ function render(dataset) {
     stack.keys(colorMapping); // returns a stack generator function which can take a data array as arg
     var stackSeries = stack(dataset);
 
-    //render bars
+    //draw bars
     var bars = g.selectAll(".bar")
         .data(stackSeries)
         .enter()
@@ -136,14 +136,12 @@ function initRectDimentions(selection) {
         .attr("height", y.bandwidth());
 }
 
-render(dataset1); // init
+drawChart(dataset1); // init
 
 document.getElementById('render1').addEventListener('click', function () {
-    // render(dataset1);
     updateChart(dataset1);
 
 });
 document.getElementById('render2').addEventListener('click', function () {
-    // render(dataset2);
     updateChart(dataset2);
 });
