@@ -17,7 +17,7 @@ var dataset2 = [
 
 var margin = {top: 20, right: 40, bottom: 40, left: 85};
 
-var svg = d3.select('svg').attr('width', 560).attr('height', 340);
+var svg = d3.select('svg').attr('width', 420).attr('height', 255);
 
 var width = +svg.attr('width') - margin.left - margin.right;
 
