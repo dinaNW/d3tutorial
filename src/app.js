@@ -54,6 +54,7 @@ var stack = d3.stack()
     .offset(d3.stackOffsetExpand);
 
 var render = function (dataset) {
+    var t = d3.transition().duration(1000);
 
     // set y domain
     y.domain(dataset.map(function (d) {
@@ -87,6 +88,7 @@ var render = function (dataset) {
         .attr("y", function (d, i) {
             return y(d.data.name);
         })
+        .transition(t)
         .attr("x", function (d) {
             return x(d[0]);
         })
@@ -96,7 +98,7 @@ var render = function (dataset) {
         .attr("height", y.bandwidth());
 };
 
-// render(dataset1); // init
+render(dataset1); // init
 
 document.getElementById('render1').addEventListener('click', function () {
     render(dataset1);
