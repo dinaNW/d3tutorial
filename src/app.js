@@ -31,13 +31,11 @@ var x = d3.scaleLinear()
     .domain([0, 1])
     .range([0, width]);
 
-var xAxis = d3.axisBottom(x)
-    .ticks(5, '%');
-
-// append x axis
+// create x axis
 g.append('g')
     .attr('transform', 'translate(0, ' + height + ')')
-    .call(xAxis);
+    .call(d3.axisBottom(x)
+        .ticks(5, '%'));
 
 // create y axis
 var y = d3.scaleBand()
@@ -54,20 +52,7 @@ var z = d3.scaleOrdinal()
 var stack = d3.stack()
     .offset(d3.stackOffsetExpand);
 
-render(dataset1); // init
-
-document.getElementById('render1').addEventListener('click', function () {
-    // render(dataset1);
-    updateChart(dataset1);
-
-});
-document.getElementById('render2').addEventListener('click', function () {
-    // render(dataset2);
-    updateChart(dataset2);
-});
-
 function render(dataset) {
-
     // set y domain
     y.domain(dataset.map(function (d) {
         return d.name;
@@ -92,7 +77,6 @@ function render(dataset) {
             return z(d.key);
         });
 
-
     bars.selectAll("rect")
         .data(function (d) {
             return d;
@@ -104,7 +88,6 @@ function render(dataset) {
 }
 
 function updateChart(dataset) {
-    // var t = d3.transition().duration(1000);
     var stackSeries = stack(dataset);
 
     var bars = d3.selectAll('.bar')
@@ -131,3 +114,15 @@ function renderColouredRects(bars) {
         })
         .attr("height", y.bandwidth());
 }
+
+render(dataset1); // init
+
+document.getElementById('render1').addEventListener('click', function () {
+    // render(dataset1);
+    updateChart(dataset1);
+
+});
+document.getElementById('render2').addEventListener('click', function () {
+    // render(dataset2);
+    updateChart(dataset2);
+});
