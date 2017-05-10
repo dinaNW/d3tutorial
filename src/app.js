@@ -106,20 +106,14 @@ function renderColouredRects(bars) {
     selection
         .on('mouseover', function (d, i, elements) {
             var h = y.bandwidth(),
-                w = x(d[1] - d[0]),
                 yPos = y(d.data.name),
-                xPos = x(d[0]),
-                hScale = 1.4,
-                wScale = 1.1;
+                hScale = 1.4;
 
             d3.select(this)
                 .transition()
                 .duration(200)
-                .attr('y', yPos-(h*hScale-h)/2)
-                .attr('height', h * hScale)
-                .attr('width', function (d) {
-                    return w * wScale;
-                });
+                .attr('y', yPos - (h * hScale - h) / 2)
+                .attr('height', h * hScale);
         })
         .on('mouseleave', function (d, i, elements) {
             initRectDimentions(d3.select(this));
