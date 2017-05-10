@@ -3,7 +3,8 @@ var dataset1 = [
     {name: 'ESPN', live: 83, native: 7, embedded: 10},
     {name: 'MTV', live: 91, native: 5, embedded: 4},
     {name: 'NYTimes', live: 30, native: 25, embedded: 45},
-    {name: 'Huffington Post', live: 50, native: 25, embedded: 15}
+    {name: 'Huffington Post', live: 50, native: 25, embedded: 15},
+    {name: 'BuzzFeed', live: 60, native: 15, embedded: 15}
 ];
 var dataset2 = [
     {name: 'Yahoo', live: 83, native: 7, embedded: 10},
@@ -42,7 +43,8 @@ var y = d3.scaleBand()
     .range([height, 0])
     .padding(0.5);
 
-var yAxis = d3.axisLeft(y);
+var yAxis = g.append('g')
+    .call(d3.axisLeft(y));
 
 // create z axis
 var z = d3.scaleOrdinal()
@@ -57,10 +59,7 @@ var render = function (dataset) {
     y.domain(dataset.map(function (d) {
         return d.name;
     }));
-
-    // append y axis
-    g.append('g')
-        .call(yAxis);
+    yAxis.call(d3.axisLeft(y));
 
     // map stack bar colours
     var colorMapping = Object.keys(dataset[0]).slice(1);
@@ -97,8 +96,11 @@ var render = function (dataset) {
         .attr("height", y.bandwidth());
 };
 
-render(dataset1); // init
+// render(dataset1); // init
 
-setTimeout(function () {
+document.getElementById('render1').addEventListener('click', function () {
+    render(dataset1);
+});
+document.getElementById('render2').addEventListener('click', function () {
     render(dataset2);
-}, 1000);
+});
