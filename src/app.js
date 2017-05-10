@@ -11,7 +11,8 @@ var dataset2 = [
     {name: 'ESPN', live: 20, native: 25, embedded: 55},
     {name: 'MTV', live: 30, native: 25, embedded: 45},
     {name: 'NYTimes', live: 91, native: 5, embedded: 4},
-    {name: 'Huffington Post', live: 50, native: 15, embedded: 25}
+    {name: 'Huffington Post', live: 10, native: 85, embedded: 5},
+    {name: 'BuzzFeed', live: 20, native: 55, embedded: 25}
 ];
 
 var margin = {top: 20, right: 40, bottom: 40, left: 85};
@@ -53,8 +54,19 @@ var z = d3.scaleOrdinal()
 var stack = d3.stack()
     .offset(d3.stackOffsetExpand);
 
-var render = function (dataset) {
-    var t = d3.transition().duration(1000);
+render(dataset1); // init
+
+document.getElementById('render1').addEventListener('click', function () {
+    // render(dataset1);
+    updateChart(dataset1);
+
+});
+document.getElementById('render2').addEventListener('click', function () {
+    // render(dataset2);
+    updateChart(dataset2);
+});
+
+function render(dataset) {
 
     // set y domain
     y.domain(dataset.map(function (d) {
@@ -79,16 +91,38 @@ var render = function (dataset) {
         .attr("fill", function (d) {
             return z(d.key);
         });
+
+
     bars.selectAll("rect")
         .data(function (d) {
             return d;
         })
         .enter()
-        .append("rect")
+        .append("rect");
+
+    renderColouredRects(bars);
+}
+
+function updateChart(dataset) {
+    // var t = d3.transition().duration(1000);
+    var stackSeries = stack(dataset);
+
+    var bars = d3.selectAll('.bar')
+        .data(stackSeries);
+
+    renderColouredRects(bars);
+}
+
+function renderColouredRects(bars) {
+    bars.selectAll('rect')
+        .data(function (d) {
+            return d;
+        })
         .attr("y", function (d, i) {
             return y(d.data.name);
         })
-        .transition(t)
+        .transition()
+        .duration(500)
         .attr("x", function (d) {
             return x(d[0]);
         })
@@ -96,13 +130,4 @@ var render = function (dataset) {
             return x(d[1] - d[0]);
         })
         .attr("height", y.bandwidth());
-};
-
-render(dataset1); // init
-
-document.getElementById('render1').addEventListener('click', function () {
-    render(dataset1);
-});
-document.getElementById('render2').addEventListener('click', function () {
-    render(dataset2);
-});
+}
