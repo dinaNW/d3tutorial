@@ -97,15 +97,42 @@ function updateChart(dataset) {
 }
 
 function renderColouredRects(bars) {
-    bars.selectAll('rect')
+
+    var selection = bars.selectAll('rect')
         .data(function (d) {
             return d;
+        });
+    initRectDimentions(selection);
+    selection
+        .on('mouseover', function (d, i, elements) {
+            var h = y.bandwidth(),
+                w = x(d[1] - d[0]),
+                yPos = y(d.data.name),
+                xPos = x(d[0]),
+                hScale = 1.4,
+                wScale = 1.1;
+
+            d3.select(this)
+                .transition()
+                .duration(200)
+                .attr('y', yPos-(h*hScale-h)/2)
+                .attr('height', h * hScale)
+                .attr('width', function (d) {
+                    return w * wScale;
+                });
         })
+        .on('mouseleave', function (d, i, elements) {
+            initRectDimentions(d3.select(this));
+        });
+}
+
+function initRectDimentions(selection) {
+    selection
         .attr("y", function (d, i) {
             return y(d.data.name);
         })
         .transition()
-        .duration(500)
+        .duration(200)
         .attr("x", function (d) {
             return x(d[0]);
         })
