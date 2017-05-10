@@ -122,11 +122,11 @@ function renderColouredRects(bars) {
 
 function initRectDimentions(selection) {
     selection
+        .transition()
+        .duration(200)
         .attr("y", function (d, i) {
             return y(d.data.name);
         })
-        .transition()
-        .duration(200)
         .attr("x", function (d) {
             return x(d[0]);
         })
