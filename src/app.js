@@ -39,6 +39,7 @@ function drawChart(dataset, elWrapper, hideYaxis) {
 
 // create x axis
     g.append('g')
+        .style('stroke-width', 0)
         .attr('transform', 'translate(0, ' + height + ')')
         .call(d3.axisBottom(x)
             .ticks(5, '%'));
@@ -53,12 +54,16 @@ function drawChart(dataset, elWrapper, hideYaxis) {
         return d.name;
     }));
     if (!hideYaxis) {
-        g.append('g').call(d3.axisLeft(y));
+        g.append('g')
+            .style('stroke-dasharray', ('3, 3'))
+            .call(d3.axisLeft(y)
+            .tickSize(0)
+            .tickPadding(15));
     }
 
 // create z axis
     z = d3.scaleOrdinal()
-        .range(["#356f75", "#409ac2", "#b4c68f"]);
+        .range(['#356f75', '#409ac2', '#b4c68f']);
 
     stack = d3.stack()
         .offset(d3.stackOffsetExpand);
@@ -73,21 +78,21 @@ function drawChart(dataset, elWrapper, hideYaxis) {
     var stackSeries = stack(dataset);
 
     //draw bars
-    var bars = g.selectAll(".bar")
+    var bars = g.selectAll('.bar')
         .data(stackSeries)
         .enter()
-        .append("g")
-        .attr("class", "bar")
-        .attr("fill", function (d) {
+        .append('g')
+        .attr('class', 'bar')
+        .attr('fill', function (d) {
             return z(d.key);
         });
 
-    bars.selectAll("rect")
+    bars.selectAll('rect')
         .data(function (d) {
             return d;
         })
         .enter()
-        .append("rect");
+        .append('rect');
 
     renderColouredRects(bars, elWrapper);
 }
@@ -111,16 +116,16 @@ function renderColouredRects(bars, elWrapper) {
     selection
         .transition()
         .duration(400)
-        .attr("y", function (d, i) {
+        .attr('y', function (d, i) {
             return y(d.data.name);
         })
-        .attr("x", function (d) {
+        .attr('x', function (d) {
             return x(d[0]);
         })
-        .attr("width", function (d) {
+        .attr('width', function (d) {
             return x(d[1] - d[0]);
         })
-        .attr("height", y.bandwidth());
+        .attr('height', y.bandwidth());
 
     selection
         .on('mouseover', function (d, i, elements) {
