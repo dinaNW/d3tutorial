@@ -18,6 +18,9 @@ var dataset2 = [
 var margin = {top: 20, right: 40, bottom: 40, left: 85};
 var x, y, z, stack;
 
+var publishedChartDivWrapper = document.getElementsByClassName('published-pie-chart')[0];
+var engagementChartDivWrapper = document.getElementsByClassName('engagement-pie-chart')[0];
+
 function drawChart(dataset, elWrapper, hideYaxis) {
 
     var svg = d3.select(elWrapper).append('svg').attr('width', 420).attr('height', 255);
@@ -49,7 +52,7 @@ function drawChart(dataset, elWrapper, hideYaxis) {
     y.domain(dataset.map(function (d) {
         return d.name;
     }));
-    if(!hideYaxis)
+    if (!hideYaxis)
         g.append('g').call(d3.axisLeft(y));
 
 // create z axis
@@ -106,18 +109,18 @@ function renderColouredRects(bars) {
     initRectDimentions(selection);
     selection
         .on('mouseover', function (d, i, elements) {
-            var h = y.bandwidth(),
-                yPos = y(d.data.name),
-                hScale = 1.4;
-
-            d3.select(this)
-                .transition()
-                .duration(200)
-                .attr('y', yPos - (h * hScale - h) / 2)
-                .attr('height', h * hScale);
+            var i = i + 1,
+                j = bars.nodes().indexOf(this.parentNode) + 1;
+            var s1 = d3.select('.' + publishedChartDivWrapper.className + ' .bar:nth-child(' + j + ') rect:nth-child(' + i + ')'),
+                s2 = d3.select('.' + engagementChartDivWrapper.className + ' .bar:nth-child(' + j + ') rect:nth-child(' + i + ')');
+            onMouseOver(d, s1, s2);
         })
         .on('mouseleave', function (d, i, elements) {
-            initRectDimentions(d3.select(this));
+            var i = i + 1,
+                j = bars.nodes().indexOf(this.parentNode) + 1;
+            var s1 = d3.select('.' + publishedChartDivWrapper.className + ' .bar:nth-child(' + j + ') rect:nth-child(' + i + ')'),
+                s2 = d3.select('.' + engagementChartDivWrapper.className + ' .bar:nth-child(' + j + ') rect:nth-child(' + i + ')');
+            onMouseOut(s1, s2);
         });
 }
 
@@ -137,8 +140,27 @@ function initRectDimentions(selection) {
         .attr("height", y.bandwidth());
 }
 
-var publishedChartDivWrapper = document.getElementsByClassName('published-pie-chart')[0];
-var engagementChartDivWrapper = document.getElementsByClassName('engagement-pie-chart')[0];
+function onMouseOver(d, selection1, selection2) {
+    var h = y.bandwidth(),
+        yPos = y(d.data.name),
+        hScale = 1.4;
+
+    selection1
+        .transition()
+        .duration(200)
+        .attr('y', yPos - (h * hScale - h) / 2)
+        .attr('height', h * hScale);
+
+    selection2
+        .transition()
+        .duration(200)
+        .attr('y', yPos - (h * hScale - h) / 2)
+        .attr('height', h * hScale);
+}
+function onMouseOut(selection1, selection2) {
+    initRectDimentions(selection1);
+    initRectDimentions(selection2);
+}
 
 // init
 drawChart(dataset1, publishedChartDivWrapper);
