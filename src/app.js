@@ -52,8 +52,9 @@ function drawChart(dataset, elWrapper, hideYaxis) {
     y.domain(dataset.map(function (d) {
         return d.name;
     }));
-    if (!hideYaxis)
+    if (!hideYaxis) {
         g.append('g').call(d3.axisLeft(y));
+    }
 
 // create z axis
     z = d3.scaleOrdinal()
@@ -88,7 +89,7 @@ function drawChart(dataset, elWrapper, hideYaxis) {
         .enter()
         .append("rect");
 
-    renderColouredRects(bars);
+    renderColouredRects(bars, elWrapper);
 }
 
 function updateChart(dataset, elWrapper) {
@@ -97,30 +98,24 @@ function updateChart(dataset, elWrapper) {
     var bars = d3.selectAll('.' + elWrapper.className + ' .bar')
         .data(stackSeries);
 
-    renderColouredRects(bars);
+    renderColouredRects(bars, elWrapper);
 }
 
-function renderColouredRects(bars) {
-
+function renderColouredRects(bars, elWrapper) {
+    var rects = d3.select('.' + elWrapper.className).selectAll('rect').nodes();
     var selection = bars.selectAll('rect')
         .data(function (d) {
             return d;
         });
+
     initRectDimentions(selection);
+
     selection
         .on('mouseover', function (d, i, elements) {
-            var i = i + 1,
-                j = bars.nodes().indexOf(this.parentNode) + 1;
-            var s1 = d3.select('.' + publishedChartDivWrapper.className + ' .bar:nth-child(' + j + ') rect:nth-child(' + i + ')'),
-                s2 = d3.select('.' + engagementChartDivWrapper.className + ' .bar:nth-child(' + j + ') rect:nth-child(' + i + ')');
-            onMouseOver(d, s1, s2);
+            onMouseOver(rects.indexOf(this), d);
         })
         .on('mouseleave', function (d, i, elements) {
-            var i = i + 1,
-                j = bars.nodes().indexOf(this.parentNode) + 1;
-            var s1 = d3.select('.' + publishedChartDivWrapper.className + ' .bar:nth-child(' + j + ') rect:nth-child(' + i + ')'),
-                s2 = d3.select('.' + engagementChartDivWrapper.className + ' .bar:nth-child(' + j + ') rect:nth-child(' + i + ')');
-            onMouseOut(s1, s2);
+            onMouseOut(rects.indexOf(this));
         });
 }
 
@@ -140,28 +135,29 @@ function initRectDimentions(selection) {
         .attr("height", y.bandwidth());
 }
 
-function onMouseOver(d, selection1, selection2) {
+function onMouseOver(index, d) {
+    var selection1 = d3.select(d3.select('.' + publishedChartDivWrapper.className).selectAll('rect').nodes()[index]),
+        selection2 = d3.select(d3.select('.' + engagementChartDivWrapper.className).selectAll('rect').nodes()[index]);
+    applyHoverEffect(selection1, d, y);
+    applyHoverEffect(selection2, d, y);
+}
+function onMouseOut(index) {
+    var selection1 = d3.select(d3.select('.' + publishedChartDivWrapper.className).selectAll('rect').nodes()[index]),
+        selection2 = d3.select(d3.select('.' + engagementChartDivWrapper.className).selectAll('rect').nodes()[index]);
+    initRectDimentions(selection1);
+    initRectDimentions(selection2);
+}
+function applyHoverEffect(selection, d, y) {
     var h = y.bandwidth(),
         yPos = y(d.data.name),
         hScale = 1.4;
 
-    selection1
-        .transition()
-        .duration(200)
-        .attr('y', yPos - (h * hScale - h) / 2)
-        .attr('height', h * hScale);
-
-    selection2
+    selection
         .transition()
         .duration(200)
         .attr('y', yPos - (h * hScale - h) / 2)
         .attr('height', h * hScale);
 }
-function onMouseOut(selection1, selection2) {
-    initRectDimentions(selection1);
-    initRectDimentions(selection2);
-}
-
 // init
 drawChart(dataset1, publishedChartDivWrapper);
 drawChart(dataset1, engagementChartDivWrapper, true);
