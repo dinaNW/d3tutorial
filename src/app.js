@@ -16,43 +16,45 @@ var dataset2 = [
 ];
 
 var margin = {top: 20, right: 40, bottom: 40, left: 85};
-
-var svg = d3.select('svg').attr('width', 420).attr('height', 255);
-
-var width = +svg.attr('width') - margin.left - margin.right;
-
-var height = +svg.attr('height') - margin.top - margin.bottom;
-
-var g = svg.append('g')
-    .attr('transform', 'translate(' + margin.left + ', ' + margin.top + ')');
-
-// create x axis
-var x = d3.scaleLinear()
-    .domain([0, 1])
-    .range([0, width]);
-
-// create x axis
-g.append('g')
-    .attr('transform', 'translate(0, ' + height + ')')
-    .call(d3.axisBottom(x)
-        .ticks(5, '%'));
-
-// create y axis
-var y = d3.scaleBand()
-    .range([height, 0])
-    .padding(0.5);
-
-var yAxis = g.append('g')
-    .call(d3.axisLeft(y));
-
-// create z axis
-var z = d3.scaleOrdinal()
-    .range(["#356f75", "#409ac2", "#b4c68f"]);
-
-var stack = d3.stack()
-    .offset(d3.stackOffsetExpand);
+var x, y, z;
 
 function drawChart(dataset, elWrapper) {
+
+    var svg = d3.select(elWrapper).append('svg').attr('width', 420).attr('height', 255);
+
+    var width = +svg.attr('width') - margin.left - margin.right;
+
+    var height = +svg.attr('height') - margin.top - margin.bottom;
+
+    var g = svg.append('g')
+        .attr('transform', 'translate(' + margin.left + ', ' + margin.top + ')');
+
+// create x axis
+    x = d3.scaleLinear()
+        .domain([0, 1])
+        .range([0, width]);
+
+// create x axis
+    g.append('g')
+        .attr('transform', 'translate(0, ' + height + ')')
+        .call(d3.axisBottom(x)
+            .ticks(5, '%'));
+
+// create y axis
+    y = d3.scaleBand()
+        .range([height, 0])
+        .padding(0.5);
+
+    var yAxis = g.append('g')
+        .call(d3.axisLeft(y));
+
+// create z axis
+    z = d3.scaleOrdinal()
+        .range(["#356f75", "#409ac2", "#b4c68f"]);
+
+    var stack = d3.stack()
+        .offset(d3.stackOffsetExpand);
+
     // set y domain
     y.domain(dataset.map(function (d) {
         return d.name;
@@ -136,7 +138,12 @@ function initRectDimentions(selection) {
         .attr("height", y.bandwidth());
 }
 
-drawChart(dataset1); // init
+var publishedChartDivWrapper = document.getElementsByClassName('published-pie-chart')[0];
+var engagementChartDivWrapper = document.getElementsByClassName('engagement-pie-chart')[0];
+
+// init
+drawChart(dataset1, publishedChartDivWrapper);
+drawChart(dataset1, engagementChartDivWrapper);
 
 document.getElementById('render1').addEventListener('click', function () {
     updateChart(dataset1);
