@@ -39,10 +39,12 @@ function drawChart(dataset, elWrapper, hideYaxis) {
 
 // create x axis
     g.append('g')
+        .attr('class', 'axis-grid')
         .style('stroke-width', 0)
         .attr('transform', 'translate(0, ' + height + ')')
         .call(d3.axisBottom(x)
-            .ticks(5, '%'));
+            .ticks(5, '%')
+            .tickSize(-height));
 
 // create y axis
     y = d3.scaleBand()
@@ -55,10 +57,10 @@ function drawChart(dataset, elWrapper, hideYaxis) {
     }));
     if (!hideYaxis) {
         g.append('g')
-            .style('stroke-dasharray', ('3, 3'))
+            .style('stroke-width', 0)
             .call(d3.axisLeft(y)
-            .tickSize(0)
-            .tickPadding(15));
+                .tickSize(0)
+                .tickPadding(15));
     }
 
 // create z axis
