@@ -18,8 +18,8 @@ var dataset2 = [
 var margin = {top: 20, right: 40, bottom: 40, left: 85};
 var x, y, z, stack;
 
-var publishedChartDivWrapper = document.getElementsByClassName('published-pie-chart')[0];
-var engagementChartDivWrapper = document.getElementsByClassName('engagement-pie-chart')[0];
+var postedChartDivWrapper = document.getElementsByClassName('posted-stacked-bar-chart')[0];
+var engagementChartDivWrapper = document.getElementsByClassName('engagement-stacked-bar-chart')[0];
 
 function drawChart(dataset, elWrapper, hideYaxis) {
 
@@ -136,13 +136,13 @@ function initRectDimentions(selection) {
 }
 
 function onMouseOver(index, d) {
-    var selection1 = d3.select(d3.select('.' + publishedChartDivWrapper.className).selectAll('rect').nodes()[index]),
+    var selection1 = d3.select(d3.select('.' + postedChartDivWrapper.className).selectAll('rect').nodes()[index]),
         selection2 = d3.select(d3.select('.' + engagementChartDivWrapper.className).selectAll('rect').nodes()[index]);
     applyHoverEffect(selection1, d, y);
     applyHoverEffect(selection2, d, y);
 }
 function onMouseOut(index) {
-    var selection1 = d3.select(d3.select('.' + publishedChartDivWrapper.className).selectAll('rect').nodes()[index]),
+    var selection1 = d3.select(d3.select('.' + postedChartDivWrapper.className).selectAll('rect').nodes()[index]),
         selection2 = d3.select(d3.select('.' + engagementChartDivWrapper.className).selectAll('rect').nodes()[index]);
     initRectDimentions(selection1);
     initRectDimentions(selection2);
@@ -157,17 +157,19 @@ function applyHoverEffect(selection, d, y) {
         .duration(200)
         .attr('y', yPos - (h * hScale - h) / 2)
         .attr('height', h * hScale);
+
+    // console.log(d);
 }
 // init
-drawChart(dataset1, publishedChartDivWrapper);
+drawChart(dataset1, postedChartDivWrapper);
 drawChart(dataset1, engagementChartDivWrapper, true);
 
 document.getElementById('render1').addEventListener('click', function () {
-    updateChart(dataset1, publishedChartDivWrapper);
+    updateChart(dataset1, postedChartDivWrapper);
     updateChart(dataset1, engagementChartDivWrapper);
 
 });
 document.getElementById('render2').addEventListener('click', function () {
-    updateChart(dataset2, publishedChartDivWrapper);
+    updateChart(dataset2, postedChartDivWrapper);
     updateChart(dataset2, engagementChartDivWrapper);
 });
