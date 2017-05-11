@@ -108,21 +108,9 @@ function renderColouredRects(bars, elWrapper) {
             return d;
         });
 
-    initRectDimentions(selection);
-
-    selection
-        .on('mouseover', function (d, i, elements) {
-            onMouseOver(rects.indexOf(this), d);
-        })
-        .on('mouseleave', function (d, i, elements) {
-            onMouseOut(rects.indexOf(this));
-        });
-}
-
-function initRectDimentions(selection) {
     selection
         .transition()
-        .duration(200)
+        .duration(400)
         .attr("y", function (d, i) {
             return y(d.data.name);
         })
@@ -133,33 +121,37 @@ function initRectDimentions(selection) {
             return x(d[1] - d[0]);
         })
         .attr("height", y.bandwidth());
+
+    selection.on('mouseover', function (d, i, elements) {
+        onMouseOver(rects.indexOf(this), d);
+    })
+        .on('mouseleave', function (d, i, elements) {
+            onMouseOut(rects.indexOf(this), d);
+        });
 }
 
 function onMouseOver(index, d) {
     var selection1 = d3.select(d3.select('.' + postedChartDivWrapper.className).selectAll('rect').nodes()[index]),
         selection2 = d3.select(d3.select('.' + engagementChartDivWrapper.className).selectAll('rect').nodes()[index]);
-    applyHoverEffect(selection1, d, y);
-    applyHoverEffect(selection2, d, y);
+    scaleHeight(selection1, d, 2);
+    scaleHeight(selection2, d, 2);
 }
-function onMouseOut(index) {
+function onMouseOut(index, d) {
     var selection1 = d3.select(d3.select('.' + postedChartDivWrapper.className).selectAll('rect').nodes()[index]),
         selection2 = d3.select(d3.select('.' + engagementChartDivWrapper.className).selectAll('rect').nodes()[index]);
-    initRectDimentions(selection1);
-    initRectDimentions(selection2);
+    scaleHeight(selection1, d, 1);
+    scaleHeight(selection2, d, 1);
 }
-function applyHoverEffect(selection, d, y) {
+function scaleHeight(selection, d, hScale) {
     var h = y.bandwidth(),
-        yPos = y(d.data.name),
-        hScale = 1.4;
-
+        yPos = y(d.data.name);
     selection
         .transition()
-        .duration(200)
+        .duration(400)
         .attr('y', yPos - (h * hScale - h) / 2)
         .attr('height', h * hScale);
-
-    // console.log(d);
 }
+
 // init
 drawChart(dataset1, postedChartDivWrapper);
 drawChart(dataset1, engagementChartDivWrapper, true);
