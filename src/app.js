@@ -16,9 +16,9 @@ var dataset2 = [
 ];
 
 var margin = {top: 20, right: 40, bottom: 40, left: 85};
-var x, y, z;
+var x, y, z, stack;
 
-function drawChart(dataset, elWrapper) {
+function drawChart(dataset, elWrapper, hideYaxis) {
 
     var svg = d3.select(elWrapper).append('svg').attr('width', 420).attr('height', 255);
 
@@ -27,7 +27,7 @@ function drawChart(dataset, elWrapper) {
     var height = +svg.attr('height') - margin.top - margin.bottom;
 
     var g = svg.append('g')
-        .attr('transform', 'translate(' + margin.left + ', ' + margin.top + ')');
+        .attr('transform', 'translate(' + (!hideYaxis ? margin.left : 0) + ', ' + margin.top + ')');
 
 // create x axis
     x = d3.scaleLinear()
@@ -45,21 +45,19 @@ function drawChart(dataset, elWrapper) {
         .range([height, 0])
         .padding(0.5);
 
-    var yAxis = g.append('g')
-        .call(d3.axisLeft(y));
+// set y domain
+    y.domain(dataset.map(function (d) {
+        return d.name;
+    }));
+    if(!hideYaxis)
+        g.append('g').call(d3.axisLeft(y));
 
 // create z axis
     z = d3.scaleOrdinal()
         .range(["#356f75", "#409ac2", "#b4c68f"]);
 
-    var stack = d3.stack()
+    stack = d3.stack()
         .offset(d3.stackOffsetExpand);
-
-    // set y domain
-    y.domain(dataset.map(function (d) {
-        return d.name;
-    }));
-    yAxis.call(d3.axisLeft(y));
 
     // map stack bar colours
     var colorMapping = Object.keys(dataset[0]).slice(1);
@@ -67,6 +65,7 @@ function drawChart(dataset, elWrapper) {
 
     // create stack series
     stack.keys(colorMapping); // returns a stack generator function which can take a data array as arg
+
     var stackSeries = stack(dataset);
 
     //draw bars
@@ -89,10 +88,10 @@ function drawChart(dataset, elWrapper) {
     renderColouredRects(bars);
 }
 
-function updateChart(dataset) {
+function updateChart(dataset, elWrapper) {
     var stackSeries = stack(dataset);
 
-    var bars = d3.selectAll('.bar')
+    var bars = d3.selectAll('.' + elWrapper.className + ' .bar')
         .data(stackSeries);
 
     renderColouredRects(bars);
@@ -143,12 +142,14 @@ var engagementChartDivWrapper = document.getElementsByClassName('engagement-pie-
 
 // init
 drawChart(dataset1, publishedChartDivWrapper);
-drawChart(dataset1, engagementChartDivWrapper);
+drawChart(dataset1, engagementChartDivWrapper, true);
 
 document.getElementById('render1').addEventListener('click', function () {
-    updateChart(dataset1);
+    updateChart(dataset1, publishedChartDivWrapper);
+    updateChart(dataset1, engagementChartDivWrapper);
 
 });
 document.getElementById('render2').addEventListener('click', function () {
-    updateChart(dataset2);
+    updateChart(dataset2, publishedChartDivWrapper);
+    updateChart(dataset2, engagementChartDivWrapper);
 });
