@@ -122,9 +122,10 @@ function renderColouredRects(bars, elWrapper) {
         })
         .attr("height", y.bandwidth());
 
-    selection.on('mouseover', function (d, i, elements) {
-        onMouseOver(rects.indexOf(this), d);
-    })
+    selection
+        .on('mouseover', function (d, i, elements) {
+            onMouseOver(rects.indexOf(this), d);
+        })
         .on('mouseleave', function (d, i, elements) {
             onMouseOut(rects.indexOf(this), d);
         });
