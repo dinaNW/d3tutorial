@@ -30,7 +30,7 @@ function drawChart(dataset, elWrapper, hideYaxis) {
     var height = +svg.attr('height') - margin.top - margin.bottom;
 
     var g = svg.append('g')
-        .attr('transform', 'translate(' + (!hideYaxis ? margin.left : 0) + ', ' + margin.top + ')');
+        .attr('transform', 'translate(' + (!hideYaxis ? margin.left : 10) + ', ' + margin.top + ')');
 
 // create x axis
     x = d3.scaleLinear()
