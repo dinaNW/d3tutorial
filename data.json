@@ -1,0 +1,1480 @@
+{
+  "result": {
+    "took": 20511,
+    "timed_out": false,
+    "_shards": {
+      "total": 155,
+      "successful": 155,
+      "failed": 0
+    },
+    "hits": {
+      "total": 102469,
+      "max_score": 0.0,
+      "hits": []
+    },
+    "aggregations": {
+      "legendsAggregation": {
+        "buckets": {
+          "tesla": {
+            "doc_count": 21182,
+            "topAggregation": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": 0,
+                  "doc_count": 18158,
+                  "Loves": {
+                    "value": 225096.0
+                  },
+                  "Hahas": {
+                    "value": 74794.0
+                  },
+                  "Comments": {
+                    "value": 317037.0
+                  },
+                  "Sads": {
+                    "value": 36068.0
+                  },
+                  "Angrys": {
+                    "value": 19334.0
+                  },
+                  "Likes": {
+                    "value": 6987781.0
+                  },
+                  "Facebook": {
+                    "value": 9120201.0
+                  },
+                  "Shares": {
+                    "value": 1244519.0
+                  },
+                  "Wows": {
+                    "value": 215607.0
+                  }
+                },
+                {
+                  "key": 3,
+                  "doc_count": 1303,
+                  "Loves": {
+                    "value": 79316.0
+                  },
+                  "Hahas": {
+                    "value": 27006.0
+                  },
+                  "Comments": {
+                    "value": 207065.0
+                  },
+                  "Sads": {
+                    "value": 2307.0
+                  },
+                  "Angrys": {
+                    "value": 2443.0
+                  },
+                  "Likes": {
+                    "value": 1825237.0
+                  },
+                  "Facebook": {
+                    "value": 3744571.0
+                  },
+                  "Shares": {
+                    "value": 1512722.0
+                  },
+                  "Wows": {
+                    "value": 88475.0
+                  }
+                },
+                {
+                  "key": 2,
+                  "doc_count": 1613,
+                  "Loves": {
+                    "value": 115595.0
+                  },
+                  "Hahas": {
+                    "value": 56003.0
+                  },
+                  "Comments": {
+                    "value": 70142.0
+                  },
+                  "Sads": {
+                    "value": 8873.0
+                  },
+                  "Angrys": {
+                    "value": 4575.0
+                  },
+                  "Likes": {
+                    "value": 2732515.0
+                  },
+                  "Facebook": {
+                    "value": 3424498.0
+                  },
+                  "Shares": {
+                    "value": 386644.0
+                  },
+                  "Wows": {
+                    "value": 50151.0
+                  }
+                },
+                {
+                  "key": 1,
+                  "doc_count": 81,
+                  "Loves": {
+                    "value": 762.0
+                  },
+                  "Hahas": {
+                    "value": 394.0
+                  },
+                  "Comments": {
+                    "value": 717.0
+                  },
+                  "Sads": {
+                    "value": 39.0
+                  },
+                  "Angrys": {
+                    "value": 302.0
+                  },
+                  "Likes": {
+                    "value": 29482.0
+                  },
+                  "Facebook": {
+                    "value": 35150.0
+                  },
+                  "Shares": {
+                    "value": 3188.0
+                  },
+                  "Wows": {
+                    "value": 266.0
+                  }
+                },
+                {
+                  "key": 8,
+                  "doc_count": 20,
+                  "Loves": {
+                    "value": 494.0
+                  },
+                  "Hahas": {
+                    "value": 100.0
+                  },
+                  "Comments": {
+                    "value": 2197.0
+                  },
+                  "Sads": {
+                    "value": 125.0
+                  },
+                  "Angrys": {
+                    "value": 69.0
+                  },
+                  "Likes": {
+                    "value": 5861.0
+                  },
+                  "Facebook": {
+                    "value": 9996.0
+                  },
+                  "Shares": {
+                    "value": 825.0
+                  },
+                  "Wows": {
+                    "value": 325.0
+                  }
+                },
+                {
+                  "key": 6,
+                  "doc_count": 5,
+                  "Loves": {
+                    "value": 101.0
+                  },
+                  "Hahas": {
+                    "value": 1.0
+                  },
+                  "Comments": {
+                    "value": 79.0
+                  },
+                  "Sads": {
+                    "value": 5.0
+                  },
+                  "Angrys": {
+                    "value": 1.0
+                  },
+                  "Likes": {
+                    "value": 2009.0
+                  },
+                  "Facebook": {
+                    "value": 2208.0
+                  },
+                  "Shares": {
+                    "value": 0.0
+                  },
+                  "Wows": {
+                    "value": 12.0
+                  }
+                },
+                {
+                  "key": 5,
+                  "doc_count": 2,
+                  "Loves": {
+                    "value": 0.0
+                  },
+                  "Hahas": {
+                    "value": 0.0
+                  },
+                  "Comments": {
+                    "value": 9.0
+                  },
+                  "Sads": {
+                    "value": 0.0
+                  },
+                  "Angrys": {
+                    "value": 0.0
+                  },
+                  "Likes": {
+                    "value": 229.0
+                  },
+                  "Facebook": {
+                    "value": 258.0
+                  },
+                  "Shares": {
+                    "value": 20.0
+                  },
+                  "Wows": {
+                    "value": 0.0
+                  }
+                }
+              ]
+            }
+          },
+          "bmw": {
+            "doc_count": 27397,
+            "topAggregation": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": 2,
+                  "doc_count": 7832,
+                  "Loves": {
+                    "value": 574538.0
+                  },
+                  "Hahas": {
+                    "value": 70244.0
+                  },
+                  "Comments": {
+                    "value": 281027.0
+                  },
+                  "Sads": {
+                    "value": 13197.0
+                  },
+                  "Angrys": {
+                    "value": 8523.0
+                  },
+                  "Likes": {
+                    "value": 1.761582E7
+                  },
+                  "Facebook": {
+                    "value": 1.979664E7
+                  },
+                  "Shares": {
+                    "value": 1028475.0
+                  },
+                  "Wows": {
+                    "value": 204816.0
+                  }
+                },
+                {
+                  "key": 0,
+                  "doc_count": 16499,
+                  "Loves": {
+                    "value": 207056.0
+                  },
+                  "Hahas": {
+                    "value": 110442.0
+                  },
+                  "Comments": {
+                    "value": 380702.0
+                  },
+                  "Sads": {
+                    "value": 79093.0
+                  },
+                  "Angrys": {
+                    "value": 130026.0
+                  },
+                  "Likes": {
+                    "value": 1.1927835E7
+                  },
+                  "Facebook": {
+                    "value": 1.4003498E7
+                  },
+                  "Shares": {
+                    "value": 930947.0
+                  },
+                  "Wows": {
+                    "value": 237398.0
+                  }
+                },
+                {
+                  "key": 3,
+                  "doc_count": 2738,
+                  "Loves": {
+                    "value": 183255.0
+                  },
+                  "Hahas": {
+                    "value": 42863.0
+                  },
+                  "Comments": {
+                    "value": 479129.0
+                  },
+                  "Sads": {
+                    "value": 7042.0
+                  },
+                  "Angrys": {
+                    "value": 21179.0
+                  },
+                  "Likes": {
+                    "value": 4373530.0
+                  },
+                  "Facebook": {
+                    "value": 7684246.0
+                  },
+                  "Shares": {
+                    "value": 2416715.0
+                  },
+                  "Wows": {
+                    "value": 160552.0
+                  }
+                },
+                {
+                  "key": 1,
+                  "doc_count": 223,
+                  "Loves": {
+                    "value": 1818.0
+                  },
+                  "Hahas": {
+                    "value": 10390.0
+                  },
+                  "Comments": {
+                    "value": 10300.0
+                  },
+                  "Sads": {
+                    "value": 520.0
+                  },
+                  "Angrys": {
+                    "value": 1215.0
+                  },
+                  "Likes": {
+                    "value": 317428.0
+                  },
+                  "Facebook": {
+                    "value": 386720.0
+                  },
+                  "Shares": {
+                    "value": 44153.0
+                  },
+                  "Wows": {
+                    "value": 896.0
+                  }
+                },
+                {
+                  "key": 8,
+                  "doc_count": 49,
+                  "Loves": {
+                    "value": 7568.0
+                  },
+                  "Hahas": {
+                    "value": 501.0
+                  },
+                  "Comments": {
+                    "value": 8315.0
+                  },
+                  "Sads": {
+                    "value": 228.0
+                  },
+                  "Angrys": {
+                    "value": 429.0
+                  },
+                  "Likes": {
+                    "value": 61181.0
+                  },
+                  "Facebook": {
+                    "value": 86880.0
+                  },
+                  "Shares": {
+                    "value": 6881.0
+                  },
+                  "Wows": {
+                    "value": 1777.0
+                  }
+                },
+                {
+                  "key": 6,
+                  "doc_count": 53,
+                  "Loves": {
+                    "value": 598.0
+                  },
+                  "Hahas": {
+                    "value": 16.0
+                  },
+                  "Comments": {
+                    "value": 168.0
+                  },
+                  "Sads": {
+                    "value": 3.0
+                  },
+                  "Angrys": {
+                    "value": 1.0
+                  },
+                  "Likes": {
+                    "value": 38096.0
+                  },
+                  "Facebook": {
+                    "value": 39069.0
+                  },
+                  "Shares": {
+                    "value": 1.0
+                  },
+                  "Wows": {
+                    "value": 186.0
+                  }
+                },
+                {
+                  "key": 5,
+                  "doc_count": 3,
+                  "Loves": {
+                    "value": 11.0
+                  },
+                  "Hahas": {
+                    "value": 0.0
+                  },
+                  "Comments": {
+                    "value": 1.0
+                  },
+                  "Sads": {
+                    "value": 2.0
+                  },
+                  "Angrys": {
+                    "value": 0.0
+                  },
+                  "Likes": {
+                    "value": 400.0
+                  },
+                  "Facebook": {
+                    "value": 416.0
+                  },
+                  "Shares": {
+                    "value": 0.0
+                  },
+                  "Wows": {
+                    "value": 2.0
+                  }
+                }
+              ]
+            }
+          },
+          "fiat": {
+            "doc_count": 7232,
+            "topAggregation": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": 0,
+                  "doc_count": 4624,
+                  "Loves": {
+                    "value": 27390.0
+                  },
+                  "Hahas": {
+                    "value": 35346.0
+                  },
+                  "Comments": {
+                    "value": 123921.0
+                  },
+                  "Sads": {
+                    "value": 26404.0
+                  },
+                  "Angrys": {
+                    "value": 25735.0
+                  },
+                  "Likes": {
+                    "value": 1722104.0
+                  },
+                  "Facebook": {
+                    "value": 2264311.0
+                  },
+                  "Shares": {
+                    "value": 271428.0
+                  },
+                  "Wows": {
+                    "value": 31983.0
+                  }
+                },
+                {
+                  "key": 2,
+                  "doc_count": 1860,
+                  "Loves": {
+                    "value": 50260.0
+                  },
+                  "Hahas": {
+                    "value": 6273.0
+                  },
+                  "Comments": {
+                    "value": 51052.0
+                  },
+                  "Sads": {
+                    "value": 5203.0
+                  },
+                  "Angrys": {
+                    "value": 4824.0
+                  },
+                  "Likes": {
+                    "value": 1718958.0
+                  },
+                  "Facebook": {
+                    "value": 1991562.0
+                  },
+                  "Shares": {
+                    "value": 141730.0
+                  },
+                  "Wows": {
+                    "value": 13263.0
+                  }
+                },
+                {
+                  "key": 3,
+                  "doc_count": 628,
+                  "Loves": {
+                    "value": 27303.0
+                  },
+                  "Hahas": {
+                    "value": 7967.0
+                  },
+                  "Comments": {
+                    "value": 70275.0
+                  },
+                  "Sads": {
+                    "value": 2457.0
+                  },
+                  "Angrys": {
+                    "value": 2213.0
+                  },
+                  "Likes": {
+                    "value": 805145.0
+                  },
+                  "Facebook": {
+                    "value": 1144743.0
+                  },
+                  "Shares": {
+                    "value": 217816.0
+                  },
+                  "Wows": {
+                    "value": 11567.0
+                  }
+                },
+                {
+                  "key": 1,
+                  "doc_count": 83,
+                  "Loves": {
+                    "value": 1944.0
+                  },
+                  "Hahas": {
+                    "value": 6564.0
+                  },
+                  "Comments": {
+                    "value": 6348.0
+                  },
+                  "Sads": {
+                    "value": 103.0
+                  },
+                  "Angrys": {
+                    "value": 762.0
+                  },
+                  "Likes": {
+                    "value": 62987.0
+                  },
+                  "Facebook": {
+                    "value": 90516.0
+                  },
+                  "Shares": {
+                    "value": 11698.0
+                  },
+                  "Wows": {
+                    "value": 110.0
+                  }
+                },
+                {
+                  "key": 8,
+                  "doc_count": 28,
+                  "Loves": {
+                    "value": 1098.0
+                  },
+                  "Hahas": {
+                    "value": 246.0
+                  },
+                  "Comments": {
+                    "value": 7396.0
+                  },
+                  "Sads": {
+                    "value": 70.0
+                  },
+                  "Angrys": {
+                    "value": 311.0
+                  },
+                  "Likes": {
+                    "value": 14582.0
+                  },
+                  "Facebook": {
+                    "value": 25800.0
+                  },
+                  "Shares": {
+                    "value": 1798.0
+                  },
+                  "Wows": {
+                    "value": 299.0
+                  }
+                },
+                {
+                  "key": 6,
+                  "doc_count": 9,
+                  "Loves": {
+                    "value": 11.0
+                  },
+                  "Hahas": {
+                    "value": 0.0
+                  },
+                  "Comments": {
+                    "value": 4.0
+                  },
+                  "Sads": {
+                    "value": 0.0
+                  },
+                  "Angrys": {
+                    "value": 0.0
+                  },
+                  "Likes": {
+                    "value": 713.0
+                  },
+                  "Facebook": {
+                    "value": 730.0
+                  },
+                  "Shares": {
+                    "value": 0.0
+                  },
+                  "Wows": {
+                    "value": 2.0
+                  }
+                }
+              ]
+            }
+          },
+          "FIAT": {
+            "doc_count": 7232,
+            "topAggregation": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": 0,
+                  "doc_count": 4624,
+                  "Loves": {
+                    "value": 27390.0
+                  },
+                  "Hahas": {
+                    "value": 35346.0
+                  },
+                  "Comments": {
+                    "value": 123921.0
+                  },
+                  "Sads": {
+                    "value": 26404.0
+                  },
+                  "Angrys": {
+                    "value": 25735.0
+                  },
+                  "Likes": {
+                    "value": 1722104.0
+                  },
+                  "Facebook": {
+                    "value": 2264311.0
+                  },
+                  "Shares": {
+                    "value": 271428.0
+                  },
+                  "Wows": {
+                    "value": 31983.0
+                  }
+                },
+                {
+                  "key": 2,
+                  "doc_count": 1860,
+                  "Loves": {
+                    "value": 50260.0
+                  },
+                  "Hahas": {
+                    "value": 6273.0
+                  },
+                  "Comments": {
+                    "value": 51052.0
+                  },
+                  "Sads": {
+                    "value": 5203.0
+                  },
+                  "Angrys": {
+                    "value": 4824.0
+                  },
+                  "Likes": {
+                    "value": 1718958.0
+                  },
+                  "Facebook": {
+                    "value": 1991562.0
+                  },
+                  "Shares": {
+                    "value": 141730.0
+                  },
+                  "Wows": {
+                    "value": 13263.0
+                  }
+                },
+                {
+                  "key": 3,
+                  "doc_count": 628,
+                  "Loves": {
+                    "value": 27303.0
+                  },
+                  "Hahas": {
+                    "value": 7967.0
+                  },
+                  "Comments": {
+                    "value": 70275.0
+                  },
+                  "Sads": {
+                    "value": 2457.0
+                  },
+                  "Angrys": {
+                    "value": 2213.0
+                  },
+                  "Likes": {
+                    "value": 805145.0
+                  },
+                  "Facebook": {
+                    "value": 1144743.0
+                  },
+                  "Shares": {
+                    "value": 217816.0
+                  },
+                  "Wows": {
+                    "value": 11567.0
+                  }
+                },
+                {
+                  "key": 1,
+                  "doc_count": 83,
+                  "Loves": {
+                    "value": 1944.0
+                  },
+                  "Hahas": {
+                    "value": 6564.0
+                  },
+                  "Comments": {
+                    "value": 6348.0
+                  },
+                  "Sads": {
+                    "value": 103.0
+                  },
+                  "Angrys": {
+                    "value": 762.0
+                  },
+                  "Likes": {
+                    "value": 62987.0
+                  },
+                  "Facebook": {
+                    "value": 90516.0
+                  },
+                  "Shares": {
+                    "value": 11698.0
+                  },
+                  "Wows": {
+                    "value": 110.0
+                  }
+                },
+                {
+                  "key": 8,
+                  "doc_count": 28,
+                  "Loves": {
+                    "value": 1098.0
+                  },
+                  "Hahas": {
+                    "value": 246.0
+                  },
+                  "Comments": {
+                    "value": 7396.0
+                  },
+                  "Sads": {
+                    "value": 70.0
+                  },
+                  "Angrys": {
+                    "value": 311.0
+                  },
+                  "Likes": {
+                    "value": 14582.0
+                  },
+                  "Facebook": {
+                    "value": 25800.0
+                  },
+                  "Shares": {
+                    "value": 1798.0
+                  },
+                  "Wows": {
+                    "value": 299.0
+                  }
+                },
+                {
+                  "key": 6,
+                  "doc_count": 9,
+                  "Loves": {
+                    "value": 11.0
+                  },
+                  "Hahas": {
+                    "value": 0.0
+                  },
+                  "Comments": {
+                    "value": 4.0
+                  },
+                  "Sads": {
+                    "value": 0.0
+                  },
+                  "Angrys": {
+                    "value": 0.0
+                  },
+                  "Likes": {
+                    "value": 713.0
+                  },
+                  "Facebook": {
+                    "value": 730.0
+                  },
+                  "Shares": {
+                    "value": 0.0
+                  },
+                  "Wows": {
+                    "value": 2.0
+                  }
+                }
+              ]
+            }
+          },
+          "faT": {
+            "doc_count": 46398,
+            "topAggregation": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": 0,
+                  "doc_count": 37366,
+                  "Loves": {
+                    "value": 380051.0
+                  },
+                  "Hahas": {
+                    "value": 336233.0
+                  },
+                  "Comments": {
+                    "value": 1042692.0
+                  },
+                  "Sads": {
+                    "value": 100608.0
+                  },
+                  "Angrys": {
+                    "value": 300981.0
+                  },
+                  "Likes": {
+                    "value": 1.5307007E7
+                  },
+                  "Facebook": {
+                    "value": 2.1716507E7
+                  },
+                  "Shares": {
+                    "value": 4040648.0
+                  },
+                  "Wows": {
+                    "value": 208289.0
+                  }
+                },
+                {
+                  "key": 2,
+                  "doc_count": 5572,
+                  "Loves": {
+                    "value": 580633.0
+                  },
+                  "Hahas": {
+                    "value": 171154.0
+                  },
+                  "Comments": {
+                    "value": 498170.0
+                  },
+                  "Sads": {
+                    "value": 49666.0
+                  },
+                  "Angrys": {
+                    "value": 20662.0
+                  },
+                  "Likes": {
+                    "value": 1.177754E7
+                  },
+                  "Facebook": {
+                    "value": 1.4665836E7
+                  },
+                  "Shares": {
+                    "value": 1470282.0
+                  },
+                  "Wows": {
+                    "value": 97799.0
+                  }
+                },
+                {
+                  "key": 3,
+                  "doc_count": 2822,
+                  "Loves": {
+                    "value": 195688.0
+                  },
+                  "Hahas": {
+                    "value": 149417.0
+                  },
+                  "Comments": {
+                    "value": 635341.0
+                  },
+                  "Sads": {
+                    "value": 19731.0
+                  },
+                  "Angrys": {
+                    "value": 32071.0
+                  },
+                  "Likes": {
+                    "value": 4014762.0
+                  },
+                  "Facebook": {
+                    "value": 7533851.0
+                  },
+                  "Shares": {
+                    "value": 2426924.0
+                  },
+                  "Wows": {
+                    "value": 59926.0
+                  }
+                },
+                {
+                  "key": 1,
+                  "doc_count": 548,
+                  "Loves": {
+                    "value": 43199.0
+                  },
+                  "Hahas": {
+                    "value": 38582.0
+                  },
+                  "Comments": {
+                    "value": 56422.0
+                  },
+                  "Sads": {
+                    "value": 4914.0
+                  },
+                  "Angrys": {
+                    "value": 2803.0
+                  },
+                  "Likes": {
+                    "value": 1043981.0
+                  },
+                  "Facebook": {
+                    "value": 1396503.0
+                  },
+                  "Shares": {
+                    "value": 203249.0
+                  },
+                  "Wows": {
+                    "value": 3353.0
+                  }
+                },
+                {
+                  "key": 8,
+                  "doc_count": 62,
+                  "Loves": {
+                    "value": 15607.0
+                  },
+                  "Hahas": {
+                    "value": 1297.0
+                  },
+                  "Comments": {
+                    "value": 50888.0
+                  },
+                  "Sads": {
+                    "value": 415.0
+                  },
+                  "Angrys": {
+                    "value": 1371.0
+                  },
+                  "Likes": {
+                    "value": 77209.0
+                  },
+                  "Facebook": {
+                    "value": 163191.0
+                  },
+                  "Shares": {
+                    "value": 14737.0
+                  },
+                  "Wows": {
+                    "value": 1667.0
+                  }
+                },
+                {
+                  "key": 6,
+                  "doc_count": 25,
+                  "Loves": {
+                    "value": 32.0
+                  },
+                  "Hahas": {
+                    "value": 0.0
+                  },
+                  "Comments": {
+                    "value": 45.0
+                  },
+                  "Sads": {
+                    "value": 1.0
+                  },
+                  "Angrys": {
+                    "value": 1.0
+                  },
+                  "Likes": {
+                    "value": 893.0
+                  },
+                  "Facebook": {
+                    "value": 975.0
+                  },
+                  "Shares": {
+                    "value": 0.0
+                  },
+                  "Wows": {
+                    "value": 3.0
+                  }
+                },
+                {
+                  "key": 5,
+                  "doc_count": 3,
+                  "Loves": {
+                    "value": 0.0
+                  },
+                  "Hahas": {
+                    "value": 0.0
+                  },
+                  "Comments": {
+                    "value": 12.0
+                  },
+                  "Sads": {
+                    "value": 0.0
+                  },
+                  "Angrys": {
+                    "value": 0.0
+                  },
+                  "Likes": {
+                    "value": 781.0
+                  },
+                  "Facebook": {
+                    "value": 814.0
+                  },
+                  "Shares": {
+                    "value": 21.0
+                  },
+                  "Wows": {
+                    "value": 0.0
+                  }
+                }
+              ]
+            }
+          },
+          "home painting": {
+            "doc_count": 589,
+            "topAggregation": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": 2,
+                  "doc_count": 160,
+                  "Loves": {
+                    "value": 61862.0
+                  },
+                  "Hahas": {
+                    "value": 21648.0
+                  },
+                  "Comments": {
+                    "value": 29715.0
+                  },
+                  "Sads": {
+                    "value": 132313.0
+                  },
+                  "Angrys": {
+                    "value": 564.0
+                  },
+                  "Likes": {
+                    "value": 747696.0
+                  },
+                  "Facebook": {
+                    "value": 1098898.0
+                  },
+                  "Shares": {
+                    "value": 100640.0
+                  },
+                  "Wows": {
+                    "value": 4460.0
+                  }
+                },
+                {
+                  "key": 0,
+                  "doc_count": 373,
+                  "Loves": {
+                    "value": 3728.0
+                  },
+                  "Hahas": {
+                    "value": 2221.0
+                  },
+                  "Comments": {
+                    "value": 6028.0
+                  },
+                  "Sads": {
+                    "value": 1579.0
+                  },
+                  "Angrys": {
+                    "value": 3059.0
+                  },
+                  "Likes": {
+                    "value": 90088.0
+                  },
+                  "Facebook": {
+                    "value": 128302.0
+                  },
+                  "Shares": {
+                    "value": 19341.0
+                  },
+                  "Wows": {
+                    "value": 2258.0
+                  }
+                },
+                {
+                  "key": 1,
+                  "doc_count": 30,
+                  "Loves": {
+                    "value": 707.0
+                  },
+                  "Hahas": {
+                    "value": 1086.0
+                  },
+                  "Comments": {
+                    "value": 1853.0
+                  },
+                  "Sads": {
+                    "value": 33.0
+                  },
+                  "Angrys": {
+                    "value": 11.0
+                  },
+                  "Likes": {
+                    "value": 30440.0
+                  },
+                  "Facebook": {
+                    "value": 40657.0
+                  },
+                  "Shares": {
+                    "value": 6451.0
+                  },
+                  "Wows": {
+                    "value": 76.0
+                  }
+                },
+                {
+                  "key": 3,
+                  "doc_count": 24,
+                  "Loves": {
+                    "value": 1116.0
+                  },
+                  "Hahas": {
+                    "value": 44.0
+                  },
+                  "Comments": {
+                    "value": 729.0
+                  },
+                  "Sads": {
+                    "value": 24.0
+                  },
+                  "Angrys": {
+                    "value": 24.0
+                  },
+                  "Likes": {
+                    "value": 17466.0
+                  },
+                  "Facebook": {
+                    "value": 22007.0
+                  },
+                  "Shares": {
+                    "value": 2198.0
+                  },
+                  "Wows": {
+                    "value": 406.0
+                  }
+                },
+                {
+                  "key": 8,
+                  "doc_count": 1,
+                  "Loves": {
+                    "value": 583.0
+                  },
+                  "Hahas": {
+                    "value": 176.0
+                  },
+                  "Comments": {
+                    "value": 1237.0
+                  },
+                  "Sads": {
+                    "value": 20.0
+                  },
+                  "Angrys": {
+                    "value": 37.0
+                  },
+                  "Likes": {
+                    "value": 3749.0
+                  },
+                  "Facebook": {
+                    "value": 6718.0
+                  },
+                  "Shares": {
+                    "value": 810.0
+                  },
+                  "Wows": {
+                    "value": 106.0
+                  }
+                },
+                {
+                  "key": 6,
+                  "doc_count": 1,
+                  "Loves": {
+                    "value": 1.0
+                  },
+                  "Hahas": {
+                    "value": 0.0
+                  },
+                  "Comments": {
+                    "value": 2.0
+                  },
+                  "Sads": {
+                    "value": 0.0
+                  },
+                  "Angrys": {
+                    "value": 0.0
+                  },
+                  "Likes": {
+                    "value": 16.0
+                  },
+                  "Facebook": {
+                    "value": 19.0
+                  },
+                  "Shares": {
+                    "value": 0.0
+                  },
+                  "Wows": {
+                    "value": 0.0
+                  }
+                }
+              ]
+            }
+          },
+          "HoMe PAINTING": {
+            "doc_count": 589,
+            "topAggregation": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": 2,
+                  "doc_count": 160,
+                  "Loves": {
+                    "value": 61862.0
+                  },
+                  "Hahas": {
+                    "value": 21648.0
+                  },
+                  "Comments": {
+                    "value": 29715.0
+                  },
+                  "Sads": {
+                    "value": 132313.0
+                  },
+                  "Angrys": {
+                    "value": 564.0
+                  },
+                  "Likes": {
+                    "value": 747696.0
+                  },
+                  "Facebook": {
+                    "value": 1098898.0
+                  },
+                  "Shares": {
+                    "value": 100640.0
+                  },
+                  "Wows": {
+                    "value": 4460.0
+                  }
+                },
+                {
+                  "key": 0,
+                  "doc_count": 373,
+                  "Loves": {
+                    "value": 3728.0
+                  },
+                  "Hahas": {
+                    "value": 2221.0
+                  },
+                  "Comments": {
+                    "value": 6028.0
+                  },
+                  "Sads": {
+                    "value": 1579.0
+                  },
+                  "Angrys": {
+                    "value": 3059.0
+                  },
+                  "Likes": {
+                    "value": 90088.0
+                  },
+                  "Facebook": {
+                    "value": 128302.0
+                  },
+                  "Shares": {
+                    "value": 19341.0
+                  },
+                  "Wows": {
+                    "value": 2258.0
+                  }
+                },
+                {
+                  "key": 1,
+                  "doc_count": 30,
+                  "Loves": {
+                    "value": 707.0
+                  },
+                  "Hahas": {
+                    "value": 1086.0
+                  },
+                  "Comments": {
+                    "value": 1853.0
+                  },
+                  "Sads": {
+                    "value": 33.0
+                  },
+                  "Angrys": {
+                    "value": 11.0
+                  },
+                  "Likes": {
+                    "value": 30440.0
+                  },
+                  "Facebook": {
+                    "value": 40657.0
+                  },
+                  "Shares": {
+                    "value": 6451.0
+                  },
+                  "Wows": {
+                    "value": 76.0
+                  }
+                },
+                {
+                  "key": 3,
+                  "doc_count": 24,
+                  "Loves": {
+                    "value": 1116.0
+                  },
+                  "Hahas": {
+                    "value": 44.0
+                  },
+                  "Comments": {
+                    "value": 729.0
+                  },
+                  "Sads": {
+                    "value": 24.0
+                  },
+                  "Angrys": {
+                    "value": 24.0
+                  },
+                  "Likes": {
+                    "value": 17466.0
+                  },
+                  "Facebook": {
+                    "value": 22007.0
+                  },
+                  "Shares": {
+                    "value": 2198.0
+                  },
+                  "Wows": {
+                    "value": 406.0
+                  }
+                },
+                {
+                  "key": 8,
+                  "doc_count": 1,
+                  "Loves": {
+                    "value": 583.0
+                  },
+                  "Hahas": {
+                    "value": 176.0
+                  },
+                  "Comments": {
+                    "value": 1237.0
+                  },
+                  "Sads": {
+                    "value": 20.0
+                  },
+                  "Angrys": {
+                    "value": 37.0
+                  },
+                  "Likes": {
+                    "value": 3749.0
+                  },
+                  "Facebook": {
+                    "value": 6718.0
+                  },
+                  "Shares": {
+                    "value": 810.0
+                  },
+                  "Wows": {
+                    "value": 106.0
+                  }
+                },
+                {
+                  "key": 6,
+                  "doc_count": 1,
+                  "Loves": {
+                    "value": 1.0
+                  },
+                  "Hahas": {
+                    "value": 0.0
+                  },
+                  "Comments": {
+                    "value": 2.0
+                  },
+                  "Sads": {
+                    "value": 0.0
+                  },
+                  "Angrys": {
+                    "value": 0.0
+                  },
+                  "Likes": {
+                    "value": 16.0
+                  },
+                  "Facebook": {
+                    "value": 19.0
+                  },
+                  "Shares": {
+                    "value": 0.0
+                  },
+                  "Wows": {
+                    "value": 0.0
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}
